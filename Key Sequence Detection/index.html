@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+ const pressed =[];
+ const secrectCode='tanjim';
+  function check(e){
+    pressed.push(e.key);
+    
+    pressed.splice( -(secrectCode.length)-1 , (pressed.length - secrectCode.length));
+    if (pressed.join('').includes(secrectCode) ){
+      console.log('Gotcha');
+      cornify_add();
+    }
+    
+  }
+
+  window.addEventListener('keyup',check);
+</script>
+</body>
+</html>
